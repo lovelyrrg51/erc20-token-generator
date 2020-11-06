@@ -1,0 +1,84 @@
+{
+  "name": "erc20-generator",
+  "version": "1.0.0",
+  "description": "A simple Smart Contract generator for a Standard, Capped, Mintable, Burnable, Payable ERC20 Token.",
+  "files": [
+    "contracts",
+    "test"
+  ],
+  "scripts": {
+    "dev": "lite-server",
+    "console": "truffle develop",
+    "compile": "scripts/compile.sh",
+    "coverage": "npm run compile && scripts/coverage.sh",
+    "clean": "rm -rf coverage",
+    "profile": "npm run clean && npm run coverage && open coverage/index.html",
+    "test": "npm run compile && scripts/test.sh",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:fix": "npm run lint:js:fix",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "flat": "scripts/flat.sh",
+    "analyze": "scripts/analyze.sh",
+    "version": "scripts/version.js",
+    "buidler:compile": "buidler compile",
+    "buidler:coverage": "npm run buidler:compile && USE_BUIDLER=true scripts/coverage.sh",
+    "buidler:console": "buidler console",
+    "buidler:test": "buidler test"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "token",
+    "erc20",
+    "erc1363"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lovelyrrg51/erc20-generator.git"
+  },
+  "author": "Lovelyrrg51",
+  "contributors": [
+    {
+      "name": "Lovelyrrg51",
+      "url": "https://github.com/lovelyrrg51"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "3.2.1-solc-0.7",
+    "erc-payable-token": "3.2.1",
+    "eth-token-recover": "3.2.1"
+  },
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.4.5",
+    "@nomiclabs/buidler-ganache": "^1.3.3",
+    "@nomiclabs/buidler-truffle5": "^1.3.4",
+    "@nomiclabs/buidler-web3": "^1.3.4",
+    "@openzeppelin/test-helpers": "^0.5.6",
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "ethereumjs-util": "^7.0.5",
+    "ethjs-abi": "^0.2.1",
+    "ganache-cli": "^6.10.2",
+    "lite-server": "^2.5.4",
+    "pify": "^5.0.0",
+    "sol2uml": "^1.1.18",
+    "solhint": "^3.2.0",
+    "solidity-coverage": "^0.7.10",
+    "surya": "github:vittominacori/surya#feature/update-solidity-parser",
+    "truffle": "^5.1.52",
+    "truffle-flattener": "^1.5.0",
+    "web3": "^1.2.11"
+  }
+}
